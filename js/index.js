@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
    nextPage.addEventListener('click', movePageUp);
 })
 
-// Renders monster details for each retrieved monster from the response
+
 let renderMonsterForm = () => {
    addMonsterCard.innerHTML = `<form id="add-monster-form">`
    + `<h3>Add Monster Here</h3>`
@@ -31,10 +31,12 @@ let fetchMonsters = () => {
    .then(monsters => { renderMonsterDetails(monsters) })
 }
 
+// Renders monster details for each retrieved monster from the response
 let renderMonsterDetails = monsters => {
    monsters.forEach( monster => { createMonsterDetailsElement(monster) })
 }
 
+// Creates the card and it's child elements as well as interpolates the specific monster's details 
 let createMonsterDetailsElement = monster => {
    const monsterCard = document.createElement('div');
    monstersListCard.appendChild(monsterCard)
