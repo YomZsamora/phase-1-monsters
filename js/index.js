@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
    nextPage.addEventListener('click', movePageUp);
 })
 
-// Renders monster details for each retrieved toy from the response
+// Renders monster details for each retrieved monster from the response
 let renderMonsterForm = () => {
    addMonsterCard.innerHTML = `<form id="add-monster-form">`
    + `<h3>Add Monster Here</h3>`
@@ -24,6 +24,7 @@ let renderMonsterForm = () => {
    + `</form>`
 }
 
+// Fetches the monster details / info using the url provided.
 let fetchMonsters = () => {
    fetch(`http://localhost:3000/monsters/?_limit=50&_page=${page}`)
    .then(resp => resp.json())
