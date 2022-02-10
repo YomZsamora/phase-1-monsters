@@ -45,6 +45,7 @@ let createMonsterDetailsElement = monster => {
    +	`<p>${monster.description}</p>`
 }
 
+// Adds a new monster to our list of monsters after providing a name and an image
 let addNewMonster = e => {
    e.preventDefault();
    let monsterName = document.querySelector('[name="name"]').value;
