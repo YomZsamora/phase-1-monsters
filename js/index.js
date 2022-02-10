@@ -45,7 +45,7 @@ let createMonsterDetailsElement = monster => {
    +	`<p>${monster.description}</p>`
 }
 
-// Adds a new monster to our list of monsters after providing a name and an image
+// Adds a new monster to our list of monsters after providing a name, age and a description
 let addNewMonster = e => {
    e.preventDefault();
    let monsterName = document.querySelector('[name="name"]').value;
@@ -58,13 +58,14 @@ let addNewMonster = e => {
       description: monsterDescription
    }
    
+   // The configurationObject contains three core components that are needed for standard POST requests: the HTTP verb, the headers, and the body.
    const configurationObject = {
       method: "POST",
       headers: {
          "Content-Type": "application/json",
          Accept: "application/json",
       },
-      
+      // By passing an object in, JSON.stringify() will return a string.
       body: JSON.stringify(newMonster)
    }
 
